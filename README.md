@@ -23,7 +23,7 @@ npm run preview
 1. Create a GitHub repo and push this project:
 
    ```bash
-   git remote add origin git@github.com:YOUR_USERNAME/dustyreactor.git
+   git remote add origin git@github.com:tiqqle/dustyreactor.git
    git push -u origin main
    ```
 
@@ -38,7 +38,7 @@ npm run preview
    | Type  | Name | Value |
    |-------|------|-------|
    | A     | `@`  | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
-   | CNAME | `www` | `YOUR_USERNAME.github.io` |
+   | CNAME | `www` | `tiqqle.github.io` |
 
 6. Wait for DNS propagation and HTTPS (usually under an hour).
 
