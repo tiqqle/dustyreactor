@@ -3,6 +3,10 @@ dist/
 # generated types
 .astro/
 
+# generated web assets (run: npm run prepare-images)
+public/images/
+public/favicon.png
+
 # dependencies
 node_modules/
 

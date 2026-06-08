@@ -1,17 +1,21 @@
 {
-  "name": "site-tmp",
+  "name": "dustyreactor",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "node scripts/prepare-images.mjs && astro dev",
+    "build": "node scripts/prepare-images.mjs && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare-images": "node scripts/prepare-images.mjs"
   },
   "dependencies": {
     "astro": "^6.4.4"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }

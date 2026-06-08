@@ -1,0 +1,68 @@
+---
+import { DISCORD_INVITE_URL } from '../config';
+---
+
+<section class="about section section--cream" id="about">
+  <div class="container about__inner">
+    <div class="about__content">
+      <span class="eyebrow">Our Approach</span>
+      <h2 class="section-heading">Ideas first. Fun always.</h2>
+      <p class="about__text">
+        We believe the best projects start with curiosity and a bit of chaos. Dusty Reactor is where playful ideas
+        become real things — games you want to keep playing, tools that save you time, and services built with care.
+      </p>
+      <a class="btn btn--primary" href={DISCORD_INVITE_URL} target="_blank" rel="noopener noreferrer">
+        Join the Discord
+      </a>
+    </div>
+    <figure class="about__art">
+      <img
+        src="/images/approach.webp"
+        alt="Scout robot at a volcanic outpost in a dusty landscape"
+        width="500"
+        height="500"
+        loading="lazy"
+      />
+    </figure>
+  </div>
+</section>
+
+<style>
+  .about__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about__text {
+    color: var(--brown);
+    font-size: 1.1rem;
+    max-width: 34rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about__art {
+    margin: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .about__art img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .about__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,43 +1,65 @@
-# Astro Starter Kit: Minimal
+# Dusty Reactor
 
-```sh
-npm create astro@latest -- --template minimal
+Studio landing page for [dustyreactor.com](https://dustyreactor.com) — a chill development shop building games, tools, and services.
+
+## Local development
+
+```bash
+npm install
+node scripts/prepare-images.mjs   # crop & optimize concept art into public/images/
+npm run dev                       # http://localhost:4321
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Build
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+node scripts/prepare-images.mjs
+npm run build
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deploy to GitHub Pages
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Create a GitHub repo and push this project:
 
-Any static assets, like images, can be placed in the `public/` directory.
+   ```bash
+   git remote add origin git@github.com:YOUR_USERNAME/dustyreactor.git
+   git push -u origin main
+   ```
 
-## 🧞 Commands
+2. In the repo, go to **Settings → Pages → Build and deployment** and set source to **GitHub Actions**.
 
-All commands are run from the root of the project, from a terminal:
+3. The workflow in `.github/workflows/deploy.yml` builds and deploys on every push to `main`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+4. Add custom domain **dustyreactor.com** under **Settings → Pages → Custom domain**. The `public/CNAME` file is already included.
 
-## 👀 Want to learn more?
+5. Configure DNS at your registrar:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+   | Type  | Name | Value |
+   |-------|------|-------|
+   | A     | `@`  | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+   | CNAME | `www` | `YOUR_USERNAME.github.io` |
+
+6. Wait for DNS propagation and HTTPS (usually under an hour).
+
+## Configuration
+
+- **Discord invite:** edit `DISCORD_INVITE_URL` in [`src/config.ts`](src/config.ts)
+- **Projects & copy:** edit the same file
+- **Concept art originals:** kept in [`conceptart/`](conceptart/); run `node scripts/prepare-images.mjs` after updating them
+
+## Project structure
+
+```
+src/
+  components/   # Nav, Hero, Projects, etc.
+  config.ts     # Site copy, Discord URL, project list
+  layouts/      # Base HTML shell + meta tags
+  pages/        # index.astro (single page)
+  styles/       # Global CSS + brand palette
+public/
+  images/       # Generated WebP assets (gitignored — built in CI)
+conceptart/     # Source art (not processed automatically)
+scripts/
+  prepare-images.mjs
+```

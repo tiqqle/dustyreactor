@@ -1,0 +1,90 @@
+---
+import { DISCORD_INVITE_URL } from '../config';
+---
+
+<section class="hero" id="top">
+  <div class="hero__inner container">
+    <div class="hero__content">
+      <span class="eyebrow">Development Shop</span>
+      <h1 class="hero__title">
+        We build fun things for <span class="hero__accent">creative minds.</span>
+      </h1>
+      <p class="hero__lead">
+        Dusty Reactor is a chill development shop crafting games, tools, and services for playful ideas.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">View Projects</a>
+        <a class="btn btn--secondary" href={DISCORD_INVITE_URL} target="_blank" rel="noopener noreferrer">
+          Join Discord
+        </a>
+      </div>
+    </div>
+    <figure class="hero__art">
+      <img src="/images/hero.webp" alt="Solarpunk reactor workshop in a meadow with gardening robots" width="700" height="467" loading="eager" />
+    </figure>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--cream);
+    padding: 4rem 0 3rem;
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    max-width: 14ch;
+  }
+
+  .hero__accent {
+    color: var(--orange);
+  }
+
+  .hero__lead {
+    max-width: 34rem;
+    color: var(--brown);
+    font-size: 1.15rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero__art {
+    margin: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .hero__art img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 900px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__art {
+      order: -1;
+    }
+  }
+</style>
