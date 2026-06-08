@@ -1,5 +1,5 @@
 ---
-import { DISCORD_INVITE_URL, SITE } from '../config';
+import { CONTACT_EMAIL, CONTACT_MAILTO, SITE } from '../config';
 
 const year = new Date().getFullYear();
 ---
@@ -8,16 +8,16 @@ const year = new Date().getFullYear();
   <div class="footer__banner">
     <div class="container footer__banner-inner">
       <h2 class="footer__title">Let's build something dusty.</h2>
-      <p class="footer__lead">Have an idea? Come hang out on Discord and see what we're working on.</p>
-      <a class="btn btn--primary btn--large" href={DISCORD_INVITE_URL} target="_blank" rel="noopener noreferrer">
-        Join Discord
+      <p class="footer__lead">Have an idea? Send us a note — we'd love to hear from you.</p>
+      <a class="btn btn--primary btn--large" href={CONTACT_MAILTO}>
+        Email {CONTACT_EMAIL}
       </a>
     </div>
   </div>
   <div class="footer__bottom">
     <div class="container footer__bottom-inner">
       <p>&copy; {year} {SITE.name}. All rights reserved.</p>
-      <a href={DISCORD_INVITE_URL} target="_blank" rel="noopener noreferrer">discord.gg/WTAZQ4kn</a>
+      <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>
     </div>
   </div>
 </footer>

@@ -6,7 +6,10 @@ export const SITE = {
     'Dusty Reactor is a chill development shop crafting games, tools, and services for playful ideas.',
 } as const;
 
-export const DISCORD_INVITE_URL = 'https://discord.gg/WTAZQ4kn';
+export const CONTACT_EMAIL = 'dustyreactor@gmail.com';
+export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
+
+export const TCGSIDEKICK_DISCORD_URL = 'https://discord.gg/WTAZQ4kn';
 
 export const PROJECTS = [
   {
@@ -28,6 +31,11 @@ export const PROJECTS = [
     status: 'In development',
     image: '/images/project-tcg.webp',
     imageAlt: 'Scout robot mascot scanning a trading card',
+    link: {
+      href: TCGSIDEKICK_DISCORD_URL,
+      label: 'Join TCGSideKick Discord',
+      external: true,
+    },
   },
   {
     id: 'backpack-builder',

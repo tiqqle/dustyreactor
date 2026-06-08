@@ -44,7 +44,8 @@ npm run preview
 
 ## Configuration
 
-- **Discord invite:** edit `DISCORD_INVITE_URL` in [`src/config.ts`](src/config.ts)
+- **Contact email:** edit `CONTACT_EMAIL` in [`src/config.ts`](src/config.ts)
+- **TCGSideKick Discord:** edit `TCGSIDEKICK_DISCORD_URL` in the same file
 - **Projects & copy:** edit the same file
 - **Concept art originals:** kept in [`conceptart/`](conceptart/); run `node scripts/prepare-images.mjs` after updating them
 

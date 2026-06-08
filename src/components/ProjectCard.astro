@@ -6,9 +6,14 @@ interface Props {
   status: string;
   image: string;
   imageAlt: string;
+  link?: {
+    href: string;
+    label: string;
+    external?: boolean;
+  };
 }
 
-const { title, subtitle, description, status, image, imageAlt } = Astro.props;
+const { title, subtitle, description, status, image, imageAlt, link } = Astro.props;
 ---
 
 <article class="project-card">
@@ -20,6 +25,15 @@ const { title, subtitle, description, status, image, imageAlt } = Astro.props;
     <h3 class="project-card__title">{title}</h3>
     <p class="project-card__subtitle">{subtitle}</p>
     <p class="project-card__desc">{description}</p>
+    {link && (
+      <a
+        class="project-card__link btn btn--secondary"
+        href={link.href}
+        {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
+        {link.label}
+      </a>
+    )}
   </div>
 </article>
 
@@ -70,5 +84,12 @@ const { title, subtitle, description, status, image, imageAlt } = Astro.props;
   .project-card__desc {
     color: var(--brown);
     margin-top: 0.25rem;
+  }
+
+  .project-card__link {
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 0.75rem;
   }
 </style>
