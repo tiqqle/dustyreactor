@@ -1,5 +1,5 @@
 ---
-import { CONTACT_MAILTO } from '../config';
+import { CONTACT_MAILTO, COPY } from '../config';
 ---
 
 <section class="about section section--cream" id="about">
@@ -7,12 +7,9 @@ import { CONTACT_MAILTO } from '../config';
     <div class="about__content">
       <span class="eyebrow">Our Approach</span>
       <h2 class="section-heading">Ideas first. Fun always.</h2>
-      <p class="about__text">
-        We believe the best projects start with curiosity and a bit of chaos. Dusty Reactor is where playful ideas
-        become real things — games you want to keep playing, tools that save you time, and services built with care.
-      </p>
+      <p class="about__text">{COPY.aboutText}</p>
       <a class="btn btn--primary" href={CONTACT_MAILTO}>
-        Get in Touch
+        {COPY.aboutCta}
       </a>
     </div>
     <figure class="about__art">

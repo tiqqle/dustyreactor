@@ -1,5 +1,5 @@
 ---
-import { CONTACT_EMAIL, CONTACT_MAILTO, SITE } from '../config';
+import { CONTACT_EMAIL, CONTACT_MAILTO, COPY, SITE } from '../config';
 
 const year = new Date().getFullYear();
 ---
@@ -8,10 +8,11 @@ const year = new Date().getFullYear();
   <div class="footer__banner">
     <div class="container footer__banner-inner">
       <h2 class="footer__title">Let's build something dusty.</h2>
-      <p class="footer__lead">Have an idea? Send us a note — we'd love to hear from you.</p>
+      <p class="footer__lead">{COPY.footerLead}</p>
       <a class="btn btn--primary btn--large" href={CONTACT_MAILTO}>
-        Email {CONTACT_EMAIL}
+        {COPY.footerCta}
       </a>
+      <p class="footer__note">Looking for TCGSideKick? Head to the Projects section for the app Discord.</p>
     </div>
   </div>
   <div class="footer__bottom">
@@ -46,6 +47,13 @@ const year = new Date().getFullYear();
     max-width: 32rem;
     font-size: 1.1rem;
     opacity: 0.85;
+  }
+
+  .footer__note {
+    max-width: 28rem;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-top: 0.25rem;
   }
 
   .btn--large {

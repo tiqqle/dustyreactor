@@ -24,11 +24,10 @@ const jobs = [
     quality: 80,
   },
   {
-    src: 'dusty pieces.png',
-    dest: 'project-tcg.webp',
-    extract: { left: 920, top: 420, width: 560, height: 520 },
+    src: 'tcgsidekick-logo.png',
+    dest: 'tcgsidekick-logo.webp',
     width: 600,
-    quality: 82,
+    quality: 90,
   },
   {
     src: 'dusty_reactor_concept_art.png',

@@ -1,5 +1,5 @@
 ---
-import { CONTACT_MAILTO } from '../config';
+import { CONTACT_MAILTO, COPY } from '../config';
 ---
 
 <section class="hero" id="top">
@@ -9,13 +9,11 @@ import { CONTACT_MAILTO } from '../config';
       <h1 class="hero__title">
         We build fun things for <span class="hero__accent">creative minds.</span>
       </h1>
-      <p class="hero__lead">
-        Dusty Reactor is a chill development shop crafting games, tools, and services for playful ideas.
-      </p>
+      <p class="hero__lead">{COPY.heroLead}</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#projects">View Projects</a>
         <a class="btn btn--secondary" href={CONTACT_MAILTO}>
-          Get in Touch
+          {COPY.heroCtaSecondary}
         </a>
       </div>
     </div>

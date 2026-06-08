@@ -1,5 +1,5 @@
 ---
-import { PROJECTS } from '../config';
+import { PROJECTS, COPY } from '../config';
 import ProjectCard from './ProjectCard.astro';
 ---
 
@@ -8,9 +8,7 @@ import ProjectCard from './ProjectCard.astro';
     <div class="projects__header">
       <span class="eyebrow">Featured Work</span>
       <h2 class="section-heading">Projects</h2>
-      <p class="section-lead">
-        Games, tools, and experiments from the Dusty Reactor workshop — built with curiosity and a bit of chaos.
-      </p>
+      <p class="section-lead">{COPY.projectsLead}</p>
     </div>
 
     <div class="projects__grid">
